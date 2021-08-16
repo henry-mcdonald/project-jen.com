@@ -1,22 +1,35 @@
 import React from 'react'
 import Auth from './meta/auth/Auth'
-import Toolbar from './toolbar/Toolbar'
 import Sandbox from './sandbox/Sandbox'
+import TestContext from './context/TestContext'
 
-const globalState = {
-    payloadMode:'loremIpsum', //options: 'loremIpsum, fromDB, fromFile'
-    templateMode: 'sample' //options: 'sample, fromDB, fromFile'
-};
-  
-const globalStateContext = React.createContext(globalState);
+// const GlobalContext = {
+//     payloadMode:'loremIpsum', //options: 'loremIpsum, fromDB, fromFile'
+//     templateMode: 'simple' //options: 'sample, fromDB, fromFile'
+// };
 
-const Component = () => {
-    return(
+const contextMapper = {
+    'test':{
+        'getCards': 'fromLocal',
+        'template': 'simple'
+    }
+}
+
+
+const Component = ({contextName}) => {
+
+    const getExistingCardsContext = contextMapper[contextName].getCards
+    const templateContext = contextMapper[contextName].template
+
+
+    return (
         <div>
-            Component: Big Poppa App Controlller
             <div><Auth /></div>
-            <div><Toolbar /></div>
-            <div><Sandbox /></div>
+            <div>
+                <Sandbox 
+                getExistingCardsContext={getExistingCardsContext}
+                />
+            </div>
         </div>
     )
 }

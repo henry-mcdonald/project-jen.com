@@ -1,11 +1,12 @@
 import React from 'react'
 
-function Toolbar() {
+const TestContext = () => {
+    
     return (
         <div>
-            Toolbar
+            
         </div>
     )
 }
 
-export default Toolbar
+export default TestContext

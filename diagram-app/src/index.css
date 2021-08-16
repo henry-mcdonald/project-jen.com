@@ -12,6 +12,17 @@ code {
     monospace;
 }
 
-div:not(.class) {
-  border: 1px solid rgb(255,0,0,.5)
+.card{
+  border: 1px solid black;
+  min-height:20px;
+  /* min-width:200px;
+  min-height:100px; */
+
+}
+
+.metaButton{
+  position:absolute;
+  top:0%;
+  right:15%;
+  background-color: rgb(0,0,255,0.4);
 }

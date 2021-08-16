@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Component from 'component/Component'
+import Component from './component/Component'
 
 function App() {
   return (
     <div className="App">
-      <Component />
+      <Component 
+      contextName={'test'}
+      />
     </div>
   );
 }
